@@ -1,0 +1,31 @@
+TASKS13:
+TASS::
+config t
+spanning-tree mode pvst
+spanning-tree vlan 1-100 root Primary
+do sh spanning-tree vlan 1
+
+BABA
+config t
+spanning-tree mode pvst
+spanning-tree vlan 1-100 root Secondary
+do sh spanning-tree vlan 1
+
+TASK14 STP enhancements
+TAAS:
+config t
+spanning-tree mode rapid-pvst
+spanning-tree backbonefast
+spanning-tree portfast bpduguard default
+interface range fa0/1-8
+ spanning-tree portfast
+ 
+BABATASS:
+config t
+spanning-tree mode rapid-pvst
+spanning-tree UPlinkfast
+spanning-tree portfast bpduguard default
+interface range fa0/1-8
+ spanning-tree portfast
+
+TASK15: 
